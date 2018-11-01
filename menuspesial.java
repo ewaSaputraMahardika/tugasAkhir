@@ -23,6 +23,7 @@ public class menuspesial extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.listspesial);
 
+        //masih proses
         CustomAdapter customAdapter = new CustomAdapter();
 
         listView.setAdapter(customAdapter);
