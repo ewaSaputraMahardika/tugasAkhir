@@ -9,13 +9,14 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class menumakanan extends AppCompatActivity {
 
 
-    //int[] IMAGES = {R.drawable}
-
-    String[] nama = {"makanan1","makanan2","makanan3","makanan4","dst"};
-
+    List<makanan> makananList;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,39 +25,14 @@ public class menumakanan extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.listmakanan);
 
-        CustomAdapter customAdapter = new CustomAdapter();
+        makananList = new ArrayList<>();
 
+        makananList.add(new makanan(R.drawable.bebekpeking, "Bebek Peking"));
+        makananList.add(new makanan(R.drawable.cahkangkung, "Cah Kangkung"));
+        makananList.add(new makanan(R.drawable.guramebakar, "Gurame Bakar"));
+        makananList.add(new makanan(R.drawable.kakap, "Kakap  the best"));
+
+        CustomAdapter customAdapter = new CustomAdapter(this, R.layout.customlayout, makananList);
         listView.setAdapter(customAdapter);
-
-    }
-
-    class CustomAdapter extends BaseAdapter{
-
-        @Override
-        public int getCount() {
-            return 0; //return IMAGES
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int i, View convertView, ViewGroup parent) {
-            convertView = getLayoutInflater().inflate(R.layout.customlayout, null);
-
-            //ImageView imageView = (ImageView) findViewById(R.id.gambarmakan);
-            TextView    textView = (TextView) findViewById(R.id.namamakanan);
-
-            //imageView.setImageResource(IMAGES[i]);
-            textView.setText(nama[i]);
-            return null;
-        }
     }
 }

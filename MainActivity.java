@@ -25,21 +25,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, menuminuman.class);
-                MainActivity.this.startActivity(myIntent);
-            }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(MainActivity.this, menuspesial.class);
-                MainActivity.this.startActivity(myIntent);
-            }
-        });
 
     }
 
